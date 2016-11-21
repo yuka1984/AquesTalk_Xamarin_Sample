@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">AqTkApp</string>
+  <string name="label_description">音声合成エンジン AquesTalk サンプルアプリ</string>
+  <string name="label_koe">音声記号列(かな+アクセントなど）</string>
+  <string name="label_speed">話速(50-300)</string>
+  <string name="label_synthe">発声</string>
+  <string name="label_err_description">音声記号列が正しくないかも</string>
+  <string name="button_close_dialog">閉じる</string>
+</resources>
