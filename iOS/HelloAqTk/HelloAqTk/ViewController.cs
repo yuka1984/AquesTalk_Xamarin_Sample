@@ -8,7 +8,8 @@ namespace HelloAqTk
 	{
 		void HandleAction(NSNotification obj)
 		{
-			InvokeOnMainThread(() => { 
+			InvokeOnMainThread(() =>
+			{
 				onPlayLabel.Text = "Done";
 			});
 		}
@@ -41,11 +42,19 @@ namespace HelloAqTk
 			// Note: this .ctor should not contain any initialization logic.
 		}
 
+		~ViewController()
+		{
+			AquesTalk.AquesTalk.GetInstance.Release();
+			NSNotificationCenter.DefaultCenter.RemoveObserver(this); 
+		}
+
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
-			NSNotificationCenter.DefaultCenter.AddObserver(new NSString("AquesTalkDaDoneNotify"), HandleAction, null);
+			NSNotificationCenter.DefaultCenter.AddObserver(new NSString("AquesTalkDaDoneNotify"), HandleAction, this);
+			textfield.Text = "ゆっくりしていってね";
+			AquesTalk.AquesTalk.GetInstance.Create();
 		}
 
 		public override void DidReceiveMemoryWarning()

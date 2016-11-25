@@ -20,8 +20,6 @@ namespace HelloAqTk
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
-			var f  =AquesTalk.AquesTalk.GetInstance;
-			f.Create();
 			return true;
 		}
 
